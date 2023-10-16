@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 13:36:51 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/13 16:20:21 by hyeongsh         ###   ########.fr       */
+/*   Created: 2023/10/16 19:21:48 by hyeongsh          #+#    #+#             */
+/*   Updated: 2023/10/16 23:36:50 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 # define GET_NEXT_LINE_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 101
+#  define BUFFER_SIZE 10
 # endif
 
 # include <stdlib.h>
 # include <unistd.h>
 
-char	*ft_strjoin(char *receive, char *buf, char *leave);
+typedef struct s_list
+{
+	int				fd;
+	char			leave[BUFFER_SIZE + 1];
+	struct s_list	*next;
+}	t_list;
+
 char	*get_next_line(int fd);
-int		ft_len(char *str);
-char	*ft_strncpy(char *dst, char *src, int n);
-int		ft_read(int fd, char *buf);
+t_list	*ft_lstadd_back(t_list **head, int fd);
+char	*ft_setstr(char	*leave, t_list *cur);
+char	*ft_strjoin(char *toss, int fd, int size);
+char	*ft_newstr(char *toss, int *size);
+int		ft_strcat(char *toss, char *buf);
+char	*ft_substr(char *toss, t_list *cur, int len);
 int		ft_check(char *toss);
+void	ft_lstdel(t_list **head, int fd);
 
 #endif
