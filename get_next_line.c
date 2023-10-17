@@ -6,28 +6,11 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:13:56 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/17 11:48:01 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/17 11:53:29 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-/*
-#include <stdio.h>
-#include <fcntl.h>
-
-int	main(void)
-{
-	int	fd1;
-
-	fd1 = open("test/qqq.txt", O_RDONLY);
-	printf("/%s", get_next_line(fd1));
-	printf("/%s", get_next_line(fd1));
-	printf("/%s", get_next_line(fd1));
-	printf("/%s", get_next_line(fd1));
-	printf("/%s", get_next_line(fd1));
-	printf("/%s", get_next_line(fd1));
-	return (0);
-}*/
 
 char	*get_next_line(int fd)
 {
