@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:21:48 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/16 23:36:50 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:11:48 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_list
 char	*get_next_line(int fd);
 t_list	*ft_lstadd_back(t_list **head, int fd);
 char	*ft_setstr(char	*leave, t_list *cur);
-char	*ft_strjoin(char *toss, int fd, int size);
+char	*read_n_join(char *toss, int fd, int size);
 char	*ft_newstr(char *toss, int *size);
 int		ft_strcat(char *toss, char *buf);
 char	*ft_substr(char *toss, t_list *cur, int len);

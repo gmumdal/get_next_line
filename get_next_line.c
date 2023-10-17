@@ -6,7 +6,7 @@
 /*   By: hyeongsh <hyeongsh@student.42seoul.>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:13:56 by hyeongsh          #+#    #+#             */
-/*   Updated: 2023/10/17 11:53:29 by hyeongsh         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:11:50 by hyeongsh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char	*get_next_line(int fd)
 	toss = ft_setstr(cur->leave, cur);
 	if (cur->leave[0] == 0 && ft_check(toss))
 	{
-		toss = ft_strjoin(toss, fd, BUFFER_SIZE);
+		toss = read_n_join(toss, fd, BUFFER_SIZE);
 		toss = ft_substr(toss, cur, 0);
 	}
 	if (toss == 0)
@@ -86,7 +86,7 @@ char	*ft_setstr(char	*leave, t_list *cur)
 	return (toss);
 }
 
-char	*ft_strjoin(char *toss, int fd, int size)
+char	*read_n_join(char *toss, int fd, int size)
 {
 	char	buf[BUFFER_SIZE + 1];
 	int		readsize;
